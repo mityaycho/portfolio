@@ -1,0 +1,30 @@
+.socialContact {
+	height: 70px;
+	width: 70px;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.socialContact:hover {
+	transform: rotate(45deg);
+	box-shadow: 0 0 30px white;
+}
+
+.socialContact img {
+	width: 80%;
+}
+
+.socialContact:hover img {
+	transform: rotate(-45deg);
+	transition: 0.5s;
+}
+
+@media screen and (max-width: 450px) {
+	.socialContact {
+		height: 50px;
+		width: 50px;
+	}
+}

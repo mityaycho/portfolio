@@ -1,0 +1,24 @@
+.slogan {
+	min-height: 250px;
+	background-color: #252527;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container {
+	height: 50%;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container h2 {
+	margin-top: 0;
+}
+
+.container a {
+	color: white;
+}

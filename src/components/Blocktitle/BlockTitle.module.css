@@ -1,0 +1,53 @@
+.blockTitle h2 {
+	font-size: 30px;
+	line-height: 1.5;
+	overflow: hidden;
+	text-shadow: 0 0 white,
+		0 0 gray,
+		0 0 lightgrey;
+	color: transparent;
+	transition: all 1s;
+}
+
+.blockTitle h2:hover {
+	text-shadow: -650px 0 gray,
+		650px 0 lightgrey,
+		0 0 gainsboro;
+}
+
+.blockTitle {
+	font-weight: 400;
+	font-style: italic;
+	line-height: 1.5;
+
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.blockTitle h2 {
+	margin-top: 0;
+}
+
+.title {
+	text-align: center;
+}
+
+.blockTitle .line {
+	width: 55px;
+	height: 1px;
+	margin-bottom: 30px;
+	background-color: darkgreen;
+}
+
+@media screen and (max-width: 700px) {
+	.blockTitle h2 {
+		font-size: 30px;
+	}
+}
+
+@media screen and (max-width: 415px) {
+	.blockTitle h2 {
+		font-size: 20px;
+	}
+}

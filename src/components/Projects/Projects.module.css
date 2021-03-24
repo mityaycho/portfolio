@@ -1,0 +1,65 @@
+.projects {
+	position: relative;
+	padding-top: 100px;
+	min-height: 100vh;
+	background-color: #1f1f20;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.particles {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+.container {
+	min-height: 100vh;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.myProjects {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1200px) {
+	.myProjects {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.projects {
+		margin: 0;
+	}
+
+	.container {
+		width: 100%;
+		margin-top: 50px;
+	}
+}
+
+@media screen and (max-width: 503px) {
+	.skillBlock {
+		width: 100%;
+	}
+
+}

@@ -1,0 +1,81 @@
+.footer {
+	min-height: 300px;
+	background: linear-gradient(#1f1f21, #434343);
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container {
+	height: 100%;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+
+
+.socialBlock {
+	height: 40%;
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.socialBlock a {
+	height: 70px;
+	width: 70px;
+}
+
+.socialBlock a:hover {
+	transform: rotate(45deg);
+	transition: 0.5s;
+}
+
+.container h2 {
+	margin-top: 50px;
+}
+
+.container small {
+	font-size: 14px;
+	letter-spacing: 1.5px;
+	margin-top: 50px;
+	margin-bottom: 0;
+}
+
+@media screen and (max-width: 1300px) {
+	.socialBlock {
+		width: 70%;
+	}
+}
+
+@media screen and (max-width: 626px) {
+	.socialBlock {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.socialBlock a {
+		height: 50px;
+		width: 50px;
+	}
+
+	.socialBlock {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.socialBlock a {
+		height: 50px;
+		width: 50px;
+	}
+
+	.socialBlock {
+		width: 90%;
+	}
+}
