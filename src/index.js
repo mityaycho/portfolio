@@ -76,7 +76,7 @@ const tick = time => {
 	let elapsed = time - prevTime;
 	prevTime = time;
 
-	moveStars(elapsed * 0.1);
+	moveStars(elapsed * 0.05);
 
 	clear();
 
@@ -94,7 +94,7 @@ const tick = time => {
 			continue;
 		}
 
-		const d = star.z / 1000.0;
+		const d = star.z / 500.0;
 		const b = 1 - d * d;
 
 		putPixel(x, y, b);
