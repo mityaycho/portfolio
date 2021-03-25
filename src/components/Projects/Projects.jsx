@@ -15,11 +15,14 @@ import Particles from 'react-particles-js';
 const Projects = () => {
 	const params = {
     particles: {
+			background: {
+				color: '#0000FF'
+			},
       number: {
         value: 300
       },
       color: {
-        value: '#fff'
+        value: 'random'
       },
       shape: {
         type: 'star',
@@ -55,7 +58,7 @@ const Projects = () => {
       },
       move: {
         enable: true,
-        speed: 3,
+        speed: 0.3,
         direction: 'none',
         straight: false
       }
