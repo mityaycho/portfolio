@@ -39,13 +39,13 @@ class Skills extends React.Component {
 	render() {
 		return (
 			<section className={styles.skills} id="skills">
-				<Sky
+				{/* <Sky
 					images={{ 0: this.state.checkSkill }}
 					how={100}
 					time={15}
 					size={'25px'}
 					background={'palettedvioletred'}
-				/>
+				/> */}
 
 				<div className={styles.container}>
 					<BlockTitle title="Skills" />

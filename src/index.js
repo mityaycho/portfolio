@@ -34,7 +34,7 @@ const makeStars = count => {
 		const s = {
 			x: Math.random() * 1600 - 800,
 			y: Math.random() * 900 - 450,
-			z: Math.random() * 1000
+			z: Math.random() * 1000 + 400
 		};
 		out.push(s);
 	}
@@ -95,7 +95,7 @@ const tick = time => {
 		}
 
 		const d = star.z / 500.0;
-		const b = 1 - d * d;
+		const b = 1 - d;
 
 		putPixel(x, y, b);
 	}

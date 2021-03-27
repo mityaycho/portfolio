@@ -89,7 +89,7 @@ const Projects = () => {
 	
 	return (
 		<section className={styles.projects} id="projects">
-      <Particles className={styles.particles} params={params} />
+      {/* <Particles className={styles.particles} params={params} /> */}
 
 			<div className={styles.container}>
 				<BlockTitle title="Projects" />
