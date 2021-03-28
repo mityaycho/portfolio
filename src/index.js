@@ -7,103 +7,78 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render( < App /> , document.getElementById('root'));
 
+const canvas = document.getElementById('starField');
+const c = canvas.getContext('2d');
+canvas.width = window.innerWidth; //screen width
+canvas.height = window.innerHeight; //screem height
 
-const canvas = document.getElementById("starsSky");
+//on mouse scroll changes speed and color
+window.addEventListener('wheel', (event) => {
+  c.strokeStyle = 'rgb('+Math.random()*255+', '+Math.random()*255+', '+Math.random()*255+')';
+  if (event.deltaY < 0) speed *= 1.1;
+  else speed *= 0.9;
+  if (speed < 0.01) speed = 0.01; else if (speed > 0.1) speed = 0.1;
+});
 
-const c = canvas.getContext("2d");
+class Star {
+  constructor() {
+    //initializing
+    this.x = Math.random()*canvas.width-canvas.width/2;  //random x
+    this.y = Math.random()*canvas.height-canvas.height/2; //random y
+    this.px = 0;
+		this.py = 0;
+    this.z = Math.random()*4; //random z    
+  }
+  
+  update() {
+    //stores previous x, y and z and generates new coordinates    
+    this.px = this.x;
+    this.py = this.y;
+    this.z += speed;
+    this.x += this.x*(speed*0.2)*this.z;
+    this.y += this.y*(speed*0.2)*this.z;
+    if (this.x > canvas.width/2+50 || this.x < -canvas.width/2-50 || this.y > canvas.height/2+50 || this.y < -canvas.height/2-50) {
+      this.x = Math.random()*canvas.width-canvas.width/2;
+      this.y = Math.random()*canvas.height-canvas.height/2;
+      this.px = this.x;
+      this.py = this.y;
+      this.z = 0;
+    }
+  }
+  
+  //draws line from x,y to px,py
+  show() {    
+    c.lineWidth = this.z;
+    c.beginPath();
+    c.moveTo(this.x, this.y);
+    c.lineTo(this.px, this.py);
+    c.stroke();
+  }
+}
 
-let w;
-let h;
+let speed = 0.04;
+let stars = [];
 
-const setCanvasExtents = () => {
-	w = document.body.clientWidth;
-	h = document.body.clientHeight;
-	canvas.width = w;
-	canvas.height = h;
-};
+//create 1500 stars (objects)
+for (let i = 0; i < 1500; i++) stars.push(new Star());
 
-setCanvasExtents();
+c.fillStyle = 'rgba(0, 0, 0, 0.1)';
+c.strokeStyle = 'rgb('+Math.random()*255+', '+Math.random()*255+', '+Math.random()*255+')';
 
-window.onresize = () => {
-	setCanvasExtents();
-};
+c.translate(canvas.width/2, canvas.height/2);
 
-const makeStars = count => {
-	const out = [];
-	for (let i = 0; i < count; i++) {
-		const s = {
-			x: Math.random() * 1600 - 800,
-			y: Math.random() * 900 - 450,
-			z: Math.random() * 1000 + 400
-		};
-		out.push(s);
-	}
-	return out;
-};
+function draw() {
+  //create rectangle
+  c.fillRect(-canvas.width/2, -canvas.height/2, canvas.width, canvas.height);
+  for (let s of stars) {
+    s.update();
+    s.show();
+  }
+  //infinte call to draw
+  requestAnimationFrame(draw);
+}
 
-let stars = makeStars(10000);
-
-const clear = () => {
-	c.fillStyle = "black";
-	c.fillRect(0, 0, canvas.width, canvas.height);
-};
-
-const putPixel = (x, y, brightness) => {
-	const intensity = brightness * 255;
-	const rgb = "rgb(" + intensity + "," + intensity + "," + intensity + ")";
-	c.fillStyle = rgb;
-	c.fillRect(x, y, 2, 2);
-};
-
-const moveStars = distance => {
-	const count = stars.length;
-	for (var i = 0; i < count; i++) {
-		const s = stars[i];
-		s.z -= distance;
-		while (s.z <= 1) {
-			s.z += 1000;
-		}
-	}
-};
-
-let prevTime;
-const init = time => {
-	prevTime = time;
-	requestAnimationFrame(tick);
-};
-
-const tick = time => {
-	let elapsed = time - prevTime;
-	prevTime = time;
-
-	moveStars(elapsed * 0.05);
-
-	clear();
-
-	const cx = w / 2;
-	const cy = h / 2;
-
-	const count = stars.length;
-	for (var i = 0; i < count; i++) {
-		const star = stars[i];
-
-		const x = cx + star.x / (star.z * 0.001);
-		const y = cy + star.y / (star.z * 0.001);
-
-		if (x < 0 || x >= w || y < 0 || y >= h) {
-			continue;
-		}
-
-		const d = star.z / 500.0;
-		const b = 1 - d;
-
-		putPixel(x, y, b);
-	}
-
-	requestAnimationFrame(tick);
-};
-
-requestAnimationFrame(init);
+draw();
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

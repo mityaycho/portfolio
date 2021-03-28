@@ -1,30 +1,33 @@
 html,
 body {
-    font-family: 'EB Garamond', serif;
-    font-size: 16px;
-    font-weight: 400;
-    font-stretch: normal;
-    line-height: 1.8;
-    letter-spacing: 1px;
+	font-family: 'EB Garamond', serif;
+	font-size: 16px;
+	font-weight: 400;
+	font-stretch: normal;
+	line-height: 1.8;
+	letter-spacing: 1px;
 
-    height: 100%;
-    margin: 0;
-    color: #fff;
-    background-color: #1f1f20;
+	height: 100%;
+	margin: 0;
+	color: #fff;
+	background-color: #1f1f20;
 
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
 }
 
-#starsSky {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background-color: #1f1f20;
-    margin-top: 0;
+#starField {
+	margin: 0 auto;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background:  #000;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: left, right;
 }
