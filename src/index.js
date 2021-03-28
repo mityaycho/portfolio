@@ -57,7 +57,8 @@ class Star {
   }
 }
 
-let speed = 0.01;
+let speed = 0.09;
+setTimeout(() => speed = 0.01, 300)
 let stars = [];
 
 //create 100 stars (objects)
