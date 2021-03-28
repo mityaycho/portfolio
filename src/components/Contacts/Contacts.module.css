@@ -1,6 +1,6 @@
 .contacts {
 	min-height: 700px;
-	background-color: #1f1f20;
+	position: relative;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;

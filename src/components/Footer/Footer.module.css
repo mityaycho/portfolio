@@ -1,6 +1,6 @@
 .footer {
 	min-height: 300px;
-	background: linear-gradient(#1f1f21, #434343);
+	position: relative;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;

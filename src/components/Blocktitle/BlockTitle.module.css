@@ -1,3 +1,13 @@
+.blockTitle {
+	font-weight: 400;
+	font-style: italic;
+	line-height: 1.5;
+
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
 .blockTitle h2 {
 	font-size: 30px;
 	line-height: 1.5;
@@ -13,16 +23,6 @@
 	text-shadow: -650px 0 gray,
 		650px 0 lightgrey,
 		0 0 gainsboro;
-}
-
-.blockTitle {
-	font-weight: 400;
-	font-style: italic;
-	line-height: 1.5;
-
-	display: flex;
-	align-items: center;
-	flex-direction: column;
 }
 
 .blockTitle h2 {
