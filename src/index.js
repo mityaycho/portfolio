@@ -56,11 +56,11 @@ class Star {
   }
 }
 
-let speed = 0.04;
+let speed = 0.01;
 let stars = [];
 
-//create 1500 stars (objects)
-for (let i = 0; i < 1500; i++) stars.push(new Star());
+//create 100 stars (objects)
+for (let i = 0; i < 100; i++) stars.push(new Star());
 
 c.fillStyle = 'rgba(0, 0, 0, 0.1)';
 c.strokeStyle = 'rgb('+Math.random()*255+', '+Math.random()*255+', '+Math.random()*255+')';
