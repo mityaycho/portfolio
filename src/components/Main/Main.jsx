@@ -13,7 +13,7 @@ const Main = () => {
       <div className={styles.container}>
         <div className={styles.greeting}>
           <span className="animated bounceInLeft">Hello!</span>
-          <span className="animated bounceInRight">My name's</span>
+          <span className="animated bounceInRight">My name is</span>
           <span className="animated zoomInLeft delay-1s">Dmitriy</span>
           <span className="animated zoomInRight delay-1s">Semchenko</span>
           <h1 className="animated rotateInUpLeft delay-2s">I'm

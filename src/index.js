@@ -14,7 +14,7 @@ canvas.height = window.innerHeight; //screem height
 
 //on mouse scroll changes speed and color
 window.addEventListener('wheel', (event) => {
-  c.strokeStyle = 'rgb('+Math.random()*255+', '+Math.random()*255+', '+Math.random()*255+')';
+  c.strokeStyle = 'rgb(41, 241, 195, 1)';
   if (event.deltaY > 0) speed *= 1.03;
   else speed *= 0.5;
   if (speed < 0.01) speed = 0.01; else if (speed > 0.1) speed = 0.1;
@@ -65,7 +65,7 @@ let stars = [];
 for (let i = 0; i < 100; i++) stars.push(new Star());
 
 c.fillStyle = 'rgba(0, 0, 0, 0.1)';
-c.strokeStyle = 'rgb('+Math.random()*255+', '+Math.random()*255+', '+Math.random()*255+')';
+c.strokeStyle = 'rgb(41, 241, 195, 1)';
 
 c.translate(canvas.width/2, canvas.height/2);
 
