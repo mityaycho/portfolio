@@ -12,7 +12,7 @@ const c = canvas.getContext('2d');
 canvas.width = window.innerWidth; //screen width
 canvas.height = window.innerHeight; //screen height
 
-//on mouse scroll changes speed and color
+//on mouse scroll changes speed
 window.addEventListener('wheel', (event) => {
   c.strokeStyle = 'rgb(41, 241, 195, 1)';
   if (event.deltaY > 0) speed *= 1.03;
