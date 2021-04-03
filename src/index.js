@@ -24,15 +24,15 @@ window.addEventListener('wheel', (event) => {
 class Star {
   constructor() {
     //initializing
-    this.x = Math.random()*canvas.width-canvas.width/2;  //random x
+    this.x = Math.random()*canvas.width-canvas.width/2; //random x
     this.y = Math.random()*canvas.height-canvas.height/2; //random y
     this.px = 0;
 		this.py = 0;
-    this.z = Math.random()*4; //random z    
+    this.z = Math.random()*4; //random z
   }
   
   update() {
-    //stores previous x, y and z and generates new coordinates    
+    //stores previous x, y and z and generates new coordinates
     this.px = this.x;
     this.py = this.y;
     this.z += speed;
@@ -48,7 +48,7 @@ class Star {
   }
   
   //draws line from x,y to px,py
-  show() {    
+  show() {
     c.lineWidth = this.z;
     c.beginPath();
     c.moveTo(this.x, this.y);
