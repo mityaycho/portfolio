@@ -10,7 +10,7 @@ ReactDOM.render( < App /> , document.getElementById('root'));
 const canvas = document.getElementById('starField');
 const c = canvas.getContext('2d');
 canvas.width = window.innerWidth; //screen width
-canvas.height = window.innerHeight; //screem height
+canvas.height = window.innerHeight; //screen height
 
 //on mouse scroll changes speed and color
 window.addEventListener('wheel', (event) => {
