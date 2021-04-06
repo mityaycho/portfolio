@@ -71,7 +71,7 @@ c.translate(canvas.width / 2, canvas.height / 2);
 
 function draw() {
   //create rectangle
-  c.fillRect(-canvas.width / 2, -canvas.height/2, canvas.width, canvas.height);
+  c.fillRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
   for (let s of stars) {
     s.update();
     s.show();
