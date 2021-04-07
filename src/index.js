@@ -39,7 +39,7 @@ class Star {
     this.x += this.x*(speed*0.2)*this.z;
     this.y += this.y*(speed*0.2)*this.z;
     if (this.x > canvas.width/2+50 || this.x < -canvas.width/2-50 || this.y > canvas.height/2+50 || this.y < -canvas.height/2-50) {
-      this.x = Math.random()*canvas.width-canvas.width/2;
+      this.x = Math.random() * canvas.width - canvas.width / 2;
       this.y = Math.random() * canvas.height - canvas.height / 2;
       this.px = this.x;
       this.py = this.y;
