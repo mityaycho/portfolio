@@ -24,7 +24,7 @@ window.addEventListener('wheel', (event) => {
 class Star {
   constructor() {
     //initializing
-    this.x = Math.random()*canvas.width-canvas.width/2; //random x
+    this.x = Math.random() * canvas.width - canvas.width / 2; //random x
     this.y = Math.random() * canvas.height - canvas.height / 2; //random y
     this.px = 0;
 		this.py = 0;
